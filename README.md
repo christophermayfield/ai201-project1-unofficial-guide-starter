@@ -90,11 +90,11 @@ These documents are relatively short, so this should be a good chunk size.
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
-| 1 | | | | | |
-| 2 | | | | | |
-| 3 | | | | | |
-| 4 | | | | | |
-| 5 | | | | | |
+| 1 | what are prediction markets? | Prediction markets are a type of market where people can bet on the outcome of an event. | Described prediction markets as markets used for forecasting and structuring uncertainty, but did not explicitly mention betting on event outcomes. | Relevant | Partially accurate |
+| 2 | what are the benefits of prediction markets? | Prediction markets can be used to make predictions about the future, and they can be used to make decisions about the future. | Said prediction markets aggregate dispersed information, improve forecast accuracy, and can inform decision-makers and business decisions. | Relevant | Accurate |
+| 3 | what are the prediction polls | a version of probability elicitation | Correctly defined prediction polls as a version of probability elicitation where participants submit and update probabilistic forecasts. | Relevant | Accurate |
+| 4 | what is the wisdom of crowds? | The wisdom of crowds is the idea that a group of people can make better decisions than a single person because they have more information and more diverse perspectives. | Cited Surowiecki's book title from a bibliography chunk rather than explaining the core idea in plain language. | Partially relevant | Partially accurate |
+| 5 | how are prediction markets a potential threat to democracy? | prediction markets are potentialy a threat to democracy because of insider trading risk. | Returned the insufficient-context fallback message instead of identifying insider trading or democratic manipulation risks. | Partially relevant | Inaccurate |
 
 **Retrieval quality:** Relevant / Partially relevant / Off-target  
 **Response accuracy:** Accurate / Partially accurate / Inaccurate
@@ -116,11 +116,19 @@ These documents are relatively short, so this should be a good chunk size.
 
 **Question that failed:**
 
+How are prediction markets a potential threat to democracy?
+
 **What the system returned:**
+
+"I could not find enough information in the loaded documents to answer that question."
 
 **Root cause (tied to a specific pipeline stage):**
 
+Retrieval returned chunks from `political_prediction_markets.pdf`, but the top results focused on election forecasting accuracy and legal history rather than democratic threats or insider trading. The relevant insider-trading and democratic-manipulation content exists in other papers (e.g. `science.aee3932.pdf`), but it was not ranked highly enough to pass into the generation context. The generator then correctly refused rather than hallucinating, but the user still did not get the expected answer.
+
 **What you would change to fix it:**
+
+Increase top-k or add query expansion for policy/risk questions, improve PDF text cleaning so semantic matches are stronger, and consider retrieving from papers tagged with political or public-health themes when questions mention democracy or threats.
 
 ---
 
