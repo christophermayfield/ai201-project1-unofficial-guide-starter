@@ -52,13 +52,13 @@ platform. | Current WD |
      - What your final chunk count was across all documents -->
 
 **Chunk size:**
-
+1000 tokens
 **Overlap:**
-
+100 tokens
 **Why these choices fit your documents:**
-
+These documents are relatively short, so this should be a good chunk size.
 **Final chunk count:**
-
+187
 ---
 
 ## Embedding Model
@@ -68,6 +68,8 @@ platform. | Current WD |
      what tradeoffs would you weigh in choosing a different model?
      Consider: context length limits, multilingual support, accuracy on domain-specific text,
      latency, and local vs. API-hosted. -->
+ all-MiniLM-L6-v2
+ This is a good model for this domain because it is a small model that is fast and accurate. I will retrieve 10 chunks per query. This is a good number because it is enough to get the context of the question, but not too many that it is slow. I just don't have a lot of money to spend on this project, so I'm going to stick with the smaller model and retrieve fewer chunks.
 
 **Model used:**
 
