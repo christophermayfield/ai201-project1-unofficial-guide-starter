@@ -8,11 +8,7 @@
 ---
 
 ## Domain
-
-<!-- What topic or category of knowledge does your system cover?
-     Why is this knowledge valuable, and why is it hard to find through official channels?
-     Example: "Student reviews of CS professors at [university] — useful because official
-     course descriptions don't reflect teaching style, exam difficulty, or workload." -->
+ Prediction market definitions and how they work. Some other documents on addiction and potential threats to democracy.
 
 ---
 
@@ -21,19 +17,28 @@
 <!-- List every source you collected documents from.
      Be specific: include URLs, subreddit names, forum thread titles, or file names.
      Aim for variety — sources that together cover different subtopics or perspectives. -->
-
-| # | Source | Type | URL or file path |
-|---|--------|------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| # | Source | Description | URL or location |
+|---|--------|-------------|-----------------|
+| 1 | Predction Market Accuracy In the Long Run | Describes how well the market does as opposed to other things | Current WD |
+| 2 |PREDICTION MARKETS: PRACTICAL
+EXPERIMENTS IN SMALL MARKETS AND
+BEHAVIOURS OBSERVED | This paper discusses a series of prediction markets created and operated in the summer of 2006 to
+measure calibration and behaviour of small-scale prediction markets| Current WD |
+| 3 | PREDICTION MARKETS: AN EXTENDED
+LITERATURE REVIEW| This paper presents an attempt to study and monitor the evolution of research on prediction markets
+(PM).| Current WD |
+| 4 |Prediction markets: An emerging form of gambling? |We write to direct the readership to a potential new form of
+gambling: prediction markets. | Current WD |
+| 5 | Distilling the Wisdom of Crowds | This paper discusses the wisdom of crowds and how it can be used to make predictions | Current WD |
+| 6 | Using prediction markets to estimate the
+reproducibility of scientific research| Discuses the lack of reproducibility of scientific research and how prediction markets can be used to estimate it | Current WD |
+| 7 |POLITICAL PREDICTION MARKETS:
+BAD LAW, BUT GOOD POLICY? | This paper discusses the use of prediction markets in politics | Current WD |
+| 8 | Prediction markets as a public health threat| This paper discusses the use of prediction markets in public health | Current WD |
+| 9 | Who Wins and Who Loses In Prediction Markets?
+Evidence from Polymarket∗|study trading gains and losses on Polymarket, the world’s largest prediction market
+platform. | Current WD |
+| 10 | Statistical Tests of real-money vs play-money prediction markets | This paper tests the statistical significance of the difference between real-money and play-money prediction markets | Current WD |
 
 ---
 
