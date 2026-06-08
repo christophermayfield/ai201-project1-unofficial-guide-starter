@@ -9,7 +9,7 @@
 
 ## Domain
 
-<!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
+I picked the domain of prediction markets, which are a type of market where people can bet on the outcome of an event.
 
 ---
 
@@ -20,48 +20,56 @@
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | Predction Market Accuracy In the Long Run | Describes how well the market does as opposed to other things | Current WD |
+| 2 |PREDICTION MARKETS: PRACTICAL
+EXPERIMENTS IN SMALL MARKETS AND
+BEHAVIOURS OBSERVED | This paper discusses a series of prediction markets created and operated in the summer of 2006 to
+measure calibration and behaviour of small-scale prediction markets| Current WD |
+| 3 | PREDICTION MARKETS: AN EXTENDED
+LITERATURE REVIEW| This paper presents an attempt to study and monitor the evolution of research on prediction markets
+(PM).| Current WD |
+| 4 |Prediction markets: An emerging form of gambling? |We write to direct the readership to a potential new form of
+gambling: prediction markets. | Current WD |
+| 5 | Distilling the Wisdom of Crowds | This paper discusses the wisdom of crowds and how it can be used to make predictions | Current WD |
+| 6 | Using prediction markets to estimate the
+reproducibility of scientific research| Discuses the lack of reproducibility of scientific research and how prediction markets can be used to estimate it | Current WD |
+| 7 |POLITICAL PREDICTION MARKETS:
+BAD LAW, BUT GOOD POLICY? | This paper discusses the use of prediction markets in politics | Current WD |
+| 8 | Prediction markets as a public health threat| This paper discusses the use of prediction markets in public health | Current WD |
+| 9 | Who Wins and Who Loses In Prediction Markets?
+Evidence from Polymarket∗|study trading gains and losses on Polymarket, the world’s largest prediction market
+platform. | Current WD |
+| 10 | Statistical Tests of real-money vs play-money prediction markets | | |
 
 ---
 
 ## Chunking Strategy
 
-<!-- How will you split documents into chunks?
-     State your chunk size (in tokens or characters), overlap size, and explain why those
-     numbers fit the structure of your documents.
-     A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+ I will chunk the documents into 1000 token chunks with 100 token overlap. These documents are relatively short, so this should be a good chunk size.
 
-**Overlap:**
+**Chunk size:** 1000 tokens
 
-**Reasoning:**
+**Overlap:** 100 tokens
+
+**Reasoning:** This should be a good chunk size for the documents.
+
+**Final chunk count:** 187
 
 ---
 
 ## Retrieval Approach
 
-<!-- Which embedding model are you using (e.g., all-MiniLM-L6-v2 via sentence-transformers)?
-     How many chunks will you retrieve per query (top-k)?
-     If you were deploying this for real users and cost wasn't a constraint, what tradeoffs
-     would you weigh in choosing a different embedding model — context length, multilingual
-     support, accuracy on domain-specific text, latency? -->
+
+ I will use the all-MiniLM-L6-v2 embedding model. This is a good model for this domain because it is a small model that is fast and accurate. I will retrieve 10 chunks per query. This is a good number because it is enough to get the context of the question, but not too many that it is slow.
 
 **Embedding model:**
+all-MiniLM-L6-v2
 
 **Top-k:**
-
+10
 **Production tradeoff reflection:**
-
+If I were deploying this for real users and cost wasn't a constraint, I would use a larger model and retrieve more chunks. This would be more accurate, but it would also be slower and more expensive. I just don't have a lot of money to spend on this project, so I'm going to stick with the smaller model and retrieve fewer chunks.
 ---
 
 ## Evaluation Plan
@@ -73,11 +81,11 @@
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | what are prediction markets?| Prediction markets are a type of market where people can bet on the outcome of an event. |
+| 2 | what are the benefits of prediction markets? | Prediction markets can be used to make predictions about the future, and they can be used to make decisions about the future. |
+| 3 | what are the prediction polls| a version of probability elicitation|
+| 4 | what is the wisdom of crowds? | The wisdom of crowds is the idea that a group of people can make better decisions than a single person because they have more information and more diverse perspectives. |
+| 5 | how are prediction markets a potential threat to democracy?| prediction markets are potentialy a threat to democracy because of insider trading risk. |
 
 ---
 
@@ -87,9 +95,9 @@
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. noisy or inconsistent documents
 
-2.
+2. potential chunks that split key information across boundaries
 
 ---
 
@@ -101,7 +109,137 @@
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
 
+
 ---
+
+┌─────────────────────────────────────────────────────────────┐
+│                    RAG SYSTEM ARCHITECTURE                  │
+└─────────────────────────────────────────────────────────────┘
+
+
+INDEXING PHASE
+==============
+
+    ┌─────────────────────┐
+    │ Document Sources    │
+    │ - PDFs              │
+    │ - Text Files        │
+    │ - Web Documents     │
+    └──────────┬──────────┘
+               │
+               ▼
+    ┌─────────────────────┐
+    │ Document Ingestion  │
+    │ Load documents      │
+    └──────────┬──────────┘
+               │
+               ▼
+    ┌─────────────────────────────────────┐
+    │ Chunking                            │
+    │ Function: chunk_text()              │
+    │ Chunk Size: 1000 tokens             │
+    │ Overlap: 100 tokens                 │
+    └──────────┬──────────────────────────┘
+               │
+               ▼
+    ┌─────────────────────┐
+    │ Text Chunks         │
+    │ [chunk_1]           │
+    │ [chunk_2]           │
+    │ [chunk_n]           │
+    └──────────┬──────────┘
+               │
+               ▼
+    ┌─────────────────────────────────────┐
+    │ Embedding Model                     │
+    │ all-MiniLM-L6-v2                    │
+    │ Convert text → vectors              │
+    └──────────┬──────────────────────────┘
+               │
+               ▼
+    ┌─────────────────────┐
+    │ Vector Store        │
+    │ Store embeddings    │
+    │ + source chunks     │
+    └─────────────────────┘
+
+
+
+QUERY PHASE
+===========
+
+                         ┌─────────────────────┐
+                         │ User Question       │
+                         └──────────┬──────────┘
+                                    │
+                                    ▼
+    ┌─────────────────────┐  similarity search
+    │ Vector Store        │────────────────────┐
+    └──────────┬──────────┘                    │
+               │                               │
+               ▼                               ▼
+    ┌─────────────────────────────────────┐
+    │ Retrieval                           │
+    │ Find most relevant chunks           │
+    └──────────┬──────────────────────────┘
+               │
+               ▼
+    ┌─────────────────────┐
+    │ Retrieved Chunks    │
+    │ Context Documents   │
+    └──────────┬──────────┘
+               │
+               ▼
+    ┌─────────────────────────────────────┐
+    │ Generation                          │
+    │ LLM receives:                       │
+    │ 1. User Question                    │
+    │ 2. Retrieved Chunks                 │
+    └──────────┬──────────────────────────┘
+               │
+               ▼
+    ┌─────────────────────┐
+    │ Final Response      │
+    │ Grounded Answer     │
+    └─────────────────────┘
+
+
+
+END-TO-END FLOW
+===============
+
+Documents
+    │
+    ▼
+Document Ingestion
+    │
+    ▼
+Chunking
+(1000 tokens, 100 overlap)
+    │
+    ▼
+Embedding
+(all-MiniLM-L6-v2)
+    │
+    ▼
+Vector Store
+    ▲
+    │
+User Question
+    │
+    ▼
+Retrieval
+    │
+    ▼
+Relevant Chunks
+    │
+    ▼
+Generation (LLM)
+    │
+    ▼
+Response
+
+
 
 ## AI Tool Plan
 
@@ -114,6 +252,9 @@
      "I'll use AI to help me code" is not a plan.
      "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
      with my specified chunk size and overlap" is a plan. -->
+
+     I will use Claude and Cursor to help me code. I will give Claude the planning.md file and ask it to implement the code. I will then give Cursor the code and ask it to help me debug the code. I expect it to make some mistakes, but I will be able to fix them. I'll review the spec to make sure I'm not missing anything and that the model is doing what I want it to do. i'll start with the ingestion and chunking stage and then move on to the embedding and retrieval stage and then the generation stage. Further, I'll use the requirements.txt file to install the dependencies and the .env file to store the API keys. I'll start with chunk_text() and go from there. 
+
 
 **Milestone 3 — Ingestion and chunking:**
 
