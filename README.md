@@ -19,26 +19,16 @@
      Aim for variety — sources that together cover different subtopics or perspectives. -->
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | Predction Market Accuracy In the Long Run | Describes how well the market does as opposed to other things | Current WD |
-| 2 |PREDICTION MARKETS: PRACTICAL
-EXPERIMENTS IN SMALL MARKETS AND
-BEHAVIOURS OBSERVED | This paper discusses a series of prediction markets created and operated in the summer of 2006 to
-measure calibration and behaviour of small-scale prediction markets| Current WD |
-| 3 | PREDICTION MARKETS: AN EXTENDED
-LITERATURE REVIEW| This paper presents an attempt to study and monitor the evolution of research on prediction markets
-(PM).| Current WD |
-| 4 |Prediction markets: An emerging form of gambling? |We write to direct the readership to a potential new form of
-gambling: prediction markets. | Current WD |
-| 5 | Distilling the Wisdom of Crowds | This paper discusses the wisdom of crowds and how it can be used to make predictions | Current WD |
-| 6 | Using prediction markets to estimate the
-reproducibility of scientific research| Discuses the lack of reproducibility of scientific research and how prediction markets can be used to estimate it | Current WD |
-| 7 |POLITICAL PREDICTION MARKETS:
-BAD LAW, BUT GOOD POLICY? | This paper discusses the use of prediction markets in politics | Current WD |
-| 8 | Prediction markets as a public health threat| This paper discusses the use of prediction markets in public health | Current WD |
-| 9 | Who Wins and Who Loses In Prediction Markets?
-Evidence from Polymarket∗|study trading gains and losses on Polymarket, the world’s largest prediction market
-platform. | Current WD |
-| 10 | Statistical Tests of real-money vs play-money prediction markets | This paper tests the statistical significance of the difference between real-money and play-money prediction markets | Current WD |
+| 1 | Prediction Market Accuracy In the Long Run | Describes how well the market performs compared to polls and other forecasting methods | `~/Desktop/Prediction Markets/1-s2.0-S0169207008000320-main.pdf` |
+| 2 | Prediction Markets: Practical Experiments in Small Markets and Behaviours Observed | Discusses prediction markets run in 2006 to measure calibration and behaviour in small-scale markets | `~/Desktop/Prediction Markets/418-Article Text-1316-1-10-20121213.pdf` |
+| 3 | Prediction Markets: An Extended Literature Review | Reviews the evolution of research on prediction markets | `~/Desktop/Prediction Markets/421-Article Text-1319-1-10-20121213.pdf` |
+| 4 | Prediction Markets: An Emerging Form of Gambling? | Discusses prediction markets as a potential new form of gambling | `~/Desktop/Prediction Markets/Addiction - 2025 - Johnson - Prediction markets  An emerging form of gambling.pdf` |
+| 5 | Distilling the Wisdom of Crowds | Compares prediction markets and prediction polls for forecasting accuracy | `~/Desktop/Prediction Markets/Atanasov2016PredictionMarketsPolls.pdf` |
+| 6 | Using Prediction Markets to Estimate the Reproducibility of Scientific Research | Explores how prediction markets can estimate reproducibility in science | `~/Desktop/Prediction Markets/pnas.201516179.pdf` |
+| 7 | Political Prediction Markets: Bad Law, But Good Policy? | Discusses the use of prediction markets in politics and related policy issues | `~/Desktop/Prediction Markets/political_prediction_markets.pdf` |
+| 8 | Prediction Markets as a Public Health Threat | Discusses prediction markets as a potential public health and democratic threat | `~/Desktop/Prediction Markets/science.aee3932.pdf` |
+| 9 | Who Wins and Who Loses in Prediction Markets? Evidence from Polymarket | Studies trading gains and losses on Polymarket | `~/Desktop/Prediction Markets/ssrn-6443103.pdf` |
+| 10 | Statistical Tests of Real-Money vs Play-Money Prediction Markets | Tests statistical differences between real-money and play-money prediction markets | `~/Desktop/Prediction Markets/V16I1_Statistical_Tests_of_Real-Money_versus_Play-Money_Prediction_Markets.pdf` |
 
 ---
 
