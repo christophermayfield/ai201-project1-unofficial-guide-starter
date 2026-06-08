@@ -6,9 +6,7 @@ from functools import lru_cache
 
 from sentence_transformers import SentenceTransformer
 
-CHUNK_SIZE = 1000
-OVERLAP = 100
-EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+from pipeline.config import CHUNK_SIZE, EMBEDDING_MODEL, OVERLAP
 
 
 @lru_cache(maxsize=1)

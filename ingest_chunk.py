@@ -2,8 +2,8 @@
 """Load documents, clean them, and produce token-based chunks.
 
 Chunk size and overlap match planning.md:
-  - 1000 tokens per chunk
-  - 100 token overlap
+  - 400 tokens per chunk
+  - 50 token overlap
 
 Set DOCUMENTS_DIR in .env to the folder containing your source PDFs/text files,
 then run:
@@ -20,7 +20,8 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
-from pipeline.chunking import CHUNK_SIZE, OVERLAP, chunk_text, count_tokens
+from pipeline.chunking import chunk_text, count_tokens
+from pipeline.config import CHUNK_SIZE, OVERLAP
 from pipeline.ingest import load_documents
 
 load_dotenv()

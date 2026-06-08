@@ -46,15 +46,15 @@ platform. | Current WD |
 ## Chunking Strategy
 
 
- I will chunk the documents into 1000 token chunks with 100 token overlap. These documents are relatively short, so this should be a good chunk size.
+ I will chunk the documents into 400 token chunks with 50 token overlap. Smaller chunks improve retrieval precision for question-answering over academic papers.
 
-**Chunk size:** 1000 tokens
+**Chunk size:** 400 tokens
 
-**Overlap:** 100 tokens
+**Overlap:** 50 tokens
 
-**Reasoning:** This should be a good chunk size for the documents.
+**Reasoning:** Smaller chunks help the retriever surface more specific passages instead of large, mixed-context blocks.
 
-**Final chunk count:** 187
+**Final chunk count:** 475
 
 ---
 
@@ -257,6 +257,8 @@ Response
 
 
 **Milestone 3 — Ingestion and chunking:**
+
+
 
 **Milestone 4 — Embedding and retrieval:**
 
