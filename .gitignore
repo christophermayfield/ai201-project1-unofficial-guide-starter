@@ -16,5 +16,8 @@ env/
 chroma_db/
 chroma/
 
+# Generated chunk output
+data/
+
 # macOS
 .DS_Store
