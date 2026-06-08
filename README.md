@@ -90,14 +90,18 @@ These documents are relatively short, so this should be a good chunk size.
 
 | # | Question | Expected answer | System response (summarized) | Retrieval quality | Response accuracy |
 |---|----------|-----------------|------------------------------|-------------------|-------------------|
-| 1 | what are prediction markets? | Prediction markets are a type of market where people can bet on the outcome of an event. | Described prediction markets as markets used for forecasting and structuring uncertainty, but did not explicitly mention betting on event outcomes. | Relevant | Partially accurate |
-| 2 | what are the benefits of prediction markets? | Prediction markets can be used to make predictions about the future, and they can be used to make decisions about the future. | Said prediction markets aggregate dispersed information, improve forecast accuracy, and can inform decision-makers and business decisions. | Relevant | Accurate |
+| 1 | what are prediction markets? | Prediction markets are a type of market where people can bet on the outcome of an event. | Described prediction markets as forecasting tools that aggregate opinions to predict outcomes (e.g. elections), but did not explicitly mention betting on events. | Relevant | Partially accurate |
+| 2 | what are the benefits of prediction markets? | Prediction markets can be used to make predictions about the future, and they can be used to make decisions about the future. | Said prediction markets synthesize dispersed information, produce more accurate forecasts, and can inform business and policy decisions. | Relevant | Accurate |
 | 3 | what are the prediction polls | a version of probability elicitation | Correctly defined prediction polls as a version of probability elicitation where participants submit and update probabilistic forecasts. | Relevant | Accurate |
-| 4 | what is the wisdom of crowds? | The wisdom of crowds is the idea that a group of people can make better decisions than a single person because they have more information and more diverse perspectives. | Cited Surowiecki's book title from a bibliography chunk rather than explaining the core idea in plain language. | Partially relevant | Partially accurate |
-| 5 | how are prediction markets a potential threat to democracy? | prediction markets are potentialy a threat to democracy because of insider trading risk. | Returned the insufficient-context fallback message instead of identifying insider trading or democratic manipulation risks. | Partially relevant | Inaccurate |
+| 4 | what is the wisdom of crowds? | The wisdom of crowds is the idea that a group of people can make better decisions than a single person because they have more information and more diverse perspectives. | Retrieved a bibliography chunk and cited Surowiecki's book title rather than explaining that groups can outperform individuals through diverse information. | Partially relevant | Partially accurate |
+| 5 | how are prediction markets a potential threat to democracy? | prediction markets are potentialy a threat to democracy because of insider trading risk. | Returned the insufficient-context fallback. Top retrieved chunks discussed political prediction markets generally, not insider trading or democratic manipulation. | Partially relevant | Inaccurate |
 
 **Retrieval quality:** Relevant / Partially relevant / Off-target  
 **Response accuracy:** Accurate / Partially accurate / Inaccurate
+
+**Overall retrieval quality:** 3 Relevant, 2 Partially relevant, 0 Off-target. Retrieval worked best on domain-specific terms like "prediction polls" and "benefits," but struggled on broader conceptual questions (wisdom of crowds) and risk questions (democracy threat), where the top chunks were related papers but not the most on-target passages.
+
+**Overall response accuracy:** 2 Accurate, 2 Partially accurate, 1 Inaccurate. The system gave strong grounded answers when retrieval surfaced the right passage (Q2, Q3), gave incomplete but directionally correct answers when context was adjacent (Q1, Q4), and failed entirely on Q5 when the generator could not find enough support in the retrieved chunks.
 
 ---
 
@@ -139,8 +143,11 @@ Increase top-k or add query expansion for policy/risk questions, improve PDF tex
 
 **One way the spec helped you during implementation:**
 
+It helped me to think about the different parts of the pipeline and how they would work together. It also helped me to think about the different ways to evaluate the system, specifically the retrieval quality and response accuracy.
+
 **One way your implementation diverged from the spec, and why:**
 
+My implementation diverged from the spec in a few ways. I used a smaller chunk size and overlap than the spec suggested. I also used a smaller model and retrieved fewer chunks than the spec suggested. I also did not use query expansion. I also did not use any other techniques to improve the retrieval quality.
 ---
 
 ## AI Usage
